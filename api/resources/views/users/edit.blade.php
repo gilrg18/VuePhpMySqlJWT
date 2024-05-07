@@ -32,7 +32,7 @@
             <input type = "text" name="password" placeholder="password" value="{{$user->password}}"/>
         </div>
         <div>
-            <input type="submit" value="Save User"/>
+            <input type="submit" value="Update User"/>
         </div>
     </form>
 </body>

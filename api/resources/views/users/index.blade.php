@@ -20,6 +20,7 @@
                 <th>email</th>
                 <th>Password</th>
                 <th>Edit</th>
+                <th>Delete</th>
             </tr>
             @foreach($users as $user)
                 <tr>
@@ -29,7 +30,14 @@
                     <td>{{$user->password}}</td>
                     <td>
                     <button onclick="window.location.href='{{ route('user.edit', ['user' => $user]) }}'">Edit</button>
-                    </td>                
+                    </td>    
+                    <td>
+                        <form method="post" action="{{route('user.delete', ['user' => $user])}}">
+                            @csrf
+                            @method('delete')
+                            <input type="submit" value="Delete" />
+                        </form>
+                    </td>             
                 </tr>
             @endforeach
         </table>
