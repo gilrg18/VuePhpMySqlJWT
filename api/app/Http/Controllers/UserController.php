@@ -27,4 +27,8 @@ class UserController extends Controller
 
         return redirect(route('user.index'));
     }
+
+    public function editUser(User $user){
+        dd($user->name);
+    }
 }
