@@ -15,6 +15,6 @@ class UserController extends Controller
     }
 
     public function storeUser(Request $request){
-        dd($request);
+        dd($request->name);
     }
 }
