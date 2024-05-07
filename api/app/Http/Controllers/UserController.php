@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -15,6 +16,14 @@ class UserController extends Controller
     }
 
     public function storeUser(Request $request){
-        dd($request->name);
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'email',
+            'password' => 'required',
+        ]);
+
+        $newUser = User::create($data);
+
+        return redirect(route('user.index'));
     }
 }
