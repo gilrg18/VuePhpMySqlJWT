@@ -13,4 +13,8 @@ class UserController extends Controller
     public function createUser(){
         return view('users.create');
     }
+
+    public function storeUser(Request $request){
+        dd($request);
+    }
 }
