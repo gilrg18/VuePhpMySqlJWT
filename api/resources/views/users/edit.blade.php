@@ -16,9 +16,9 @@
         </ul>
         @endif
     </div>
-    <form method="post" action="{{route('user.store')}}">
+    <form method="post" action="{{route('user.update',['user'=> $user])}}">
         @csrf
-        @method('post')
+        @method('put')
         <div>
             <label>Name<label>
             <input type = "text" name="name" placeholder="name" value="{{$user->name}}"/>

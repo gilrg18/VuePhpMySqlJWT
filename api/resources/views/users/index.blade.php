@@ -8,13 +8,18 @@
 <body>
     <h1>User</h1>
     <div>
+        @if(session()->has('success'))
+            <div>{{session('success')}}</div>
+        @endif
+    </div>
+    <div>
         <table border="1">
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>email</th>
                 <th>Password</th>
-                <th?>Edit</th>
+                <th>Edit</th>
             </tr>
             @foreach($users as $user)
                 <tr>
