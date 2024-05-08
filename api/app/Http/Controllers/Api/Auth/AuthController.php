@@ -20,7 +20,7 @@ class AuthController extends Controller
         $user = User::create($request->validated());
         if($user){
             $token = auth()->login($user);
-            return $this-> responseWithToken($token, $user);
+            return $this->responseWithToken($token, $user);
         }else{
             return response()->json([
                 'status' => 'failed',
