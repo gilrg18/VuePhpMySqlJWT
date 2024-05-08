@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegistrationRequest;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -13,7 +14,8 @@ class AuthController extends Controller
     }
 
     //Register method
-    public function register(){
+    public function register(RegistrationRequest $request){
+        dd($request);
         
     }
 }

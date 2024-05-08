@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,5 @@ Route::get('/user/{user}/edit', [UserController::class, 'editUser'])->name('user
 Route::put('/user/{user}/update', [UserController::class, 'updateUser'])->name('user.update');
 
 Route::delete('/user/{user}/delete', [UserController::class, 'deleteUser'])->name('user.delete');
+
+Route::post('/auth/register', [AuthController::class, 'register'])->name('register');
