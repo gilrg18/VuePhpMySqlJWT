@@ -19,11 +19,6 @@ class AuthController extends Controller
     {
         $user = User::create($request->validated());
         if($user){
-            // $credentials = request(['email', 'password']);
-            // $token = auth()->attempt($credentials);
-            // if (! $token ) {
-            //     return response()->json(['error' => 'Unauthorized'], 401);
-            // }
             $token = auth()->login($user);
             return $this->responseWithToken($token, $user);
         }else{
