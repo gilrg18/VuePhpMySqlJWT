@@ -21,3 +21,4 @@ Route::put('/user/{user}/update', [UserController::class, 'updateUser'])->name('
 Route::delete('/user/{user}/delete', [UserController::class, 'deleteUser'])->name('user.delete');
 
 Route::post('/auth/register', [AuthController::class, 'register'])->name('register');
+Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
