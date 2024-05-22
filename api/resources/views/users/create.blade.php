@@ -36,8 +36,13 @@
             <input type = "text" name="password_confirmation" placeholder="password"/>
         </div>
         <div>
+            <label>Admin</label>
+            <input type="checkbox" name="is_admin" value="1" />
+        </div>
+        <div>
             <input type="submit" value="Save User"/>
         </div>
+
     </form>
 </body>
 </html>
