@@ -16,7 +16,7 @@
         </ul>
         @endif
     </div>
-    <form method="post" action="{{route('user.store')}}">
+    <form method="post" action="{{route('register')}}">
         @csrf
         @method('post')
         <div>
@@ -30,6 +30,10 @@
         <div>
             <label>Password<label>
             <input type = "text" name="password" placeholder="password"/>
+        </div>
+        <div>
+            <label>Password Confirmation<label>
+            <input type = "text" name="password_confirmation" placeholder="password"/>
         </div>
         <div>
             <input type="submit" value="Save User"/>
