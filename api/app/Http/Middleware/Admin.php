@@ -18,6 +18,7 @@ class Admin
         //if user is not authenticated or is not an admin
         if(!auth()->check() || !auth()->user()->is_admin){
             abort(403);
+           //return redirect(route('user.index'));
         }
         return $next($request);
     }
