@@ -22,6 +22,7 @@
                 <th>Name</th>
                 <th>email</th>
                 <th>Password</th>
+                <th>Admin</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -31,6 +32,7 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->password}}</td>
+                    <td>{{$user->is_admin}}</td>
                     <td>
                     <button onclick="window.location.href='{{ route('user.edit', ['user' => $user]) }}'">Edit</button>
                     </td>    
