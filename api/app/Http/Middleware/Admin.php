@@ -17,10 +17,10 @@ class Admin
     {
         //if user is not authenticated or is not an admin
         //auth()->user() and check() are not persisting from login controller
-        dd(auth()->user(), auth()->check(), session('isAdmin'));
-        if(!auth()->check() || !session('isAdmin')){
-            abort(403);
-           //return redirect(route('user.index'));
+        //dd(auth()->user(), auth()->check(), session('isAdmin'));
+        if(!session('isAdmin')){
+            //abort(403);
+           return redirect(route('user.index'))->with('unauthorized', 'Unauthorized');
         }
         return $next($request);
     }

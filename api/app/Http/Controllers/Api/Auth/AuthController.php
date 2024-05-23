@@ -16,8 +16,11 @@ class AuthController extends Controller
         if($token){
             //dd(auth()->user());
             if(auth()->user()->is_admin){
+                session(['isAuth'=>true]);
                 session(['isAdmin' => true]);
+                //dd(auth()->user(), auth()->check(), session('isAdmin'));
             }else{
+                session(['isAuth'=>true]);
                 session(['isAdmin'=> false]);
             }
             return redirect(route('user.index'));

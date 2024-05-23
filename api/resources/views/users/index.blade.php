@@ -11,6 +11,9 @@
         @if(session()->has('success'))
             <div>{{session('success')}}</div>
         @endif
+        @if(session()->has('unauthorized'))
+            <div>{{session('unauthorized')}}</div>
+        @endif
     </div>
     <div>
         <div>
