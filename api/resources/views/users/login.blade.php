@@ -25,7 +25,7 @@
         </div>
         <div>
             <label>Password<label>
-            <input type = "text" name="password" placeholder="password"/>
+            <input type = "password" name="password" placeholder="password"/>
         </div>
         <div>
             <input type="submit" value="Log in"/>
