@@ -10,6 +10,11 @@ class UserController extends Controller
     public function login(){
         return view('users.login');
     }
+
+    public function logout(){
+        session(['isAuth'=>false]);
+        return view('users.login');
+    }
     public function index(){
         $users = User::all();
         return view('users.index', ['users'=>$users]);

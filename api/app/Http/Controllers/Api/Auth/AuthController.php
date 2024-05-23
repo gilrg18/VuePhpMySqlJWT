@@ -34,6 +34,7 @@ class AuthController extends Controller
         }
     }
 
+
     //Register method
     public function register(RegistrationRequest $request)
     {

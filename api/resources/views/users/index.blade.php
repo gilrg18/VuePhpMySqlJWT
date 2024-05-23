@@ -20,6 +20,7 @@
         @endif
     </div>
     <div>
+    <button onclick="window.location.href='{{ route('user.logout') }}'">Log out</button>
         <div>
             <a href="{{route('user.create')}}">Add User</a>
         </div>

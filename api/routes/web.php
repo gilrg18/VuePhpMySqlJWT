@@ -11,6 +11,8 @@ Route::get('/', function () {
 // Route::post('/user', [UserController::class, 'storeUser'])->name('user.store');
 Route::get('/login', [UserController::class, 'login'])->name('user.login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [UserController::class, 'logout'])->name('user.logout');
+
 
 Route::middleware(['authenticated'])->group(function () {
     Route::get('/index', [UserController::class, 'index'])->name('user.index');
