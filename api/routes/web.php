@@ -13,7 +13,7 @@ Route::get('/index', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/create', [UserController::class, 'createUser'])->name('user.create');
 Route::post('/auth/register', [AuthController::class, 'register'])->name('register');
 // Route::post('/user', [UserController::class, 'storeUser'])->name('user.store');
-Route::get('/user/login', [UserController::class, 'login'])->name('user.login');
+Route::get('/login', [UserController::class, 'login'])->name('user.login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
 
 //middleware 'is_admin' should be in routeMiddleWare array in Kernel.php

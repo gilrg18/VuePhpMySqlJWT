@@ -14,8 +14,14 @@ class AuthController extends Controller
     public function login(LoginRequest $request){
         $token = auth()->attempt($request->validated());
         if($token){
-            //return $this->responseWithToken($token, auth()->user());
+            //dd(auth()->user());
+            if(auth()->user()->is_admin){
+                session(['isAdmin' => true]);
+            }else{
+                session(['isAdmin'=> false]);
+            }
             return redirect(route('user.index'));
+            //return $this->responseWithToken($token, auth()->user());
         }else{
             return response()->json([
                 'status'=>'failed',
