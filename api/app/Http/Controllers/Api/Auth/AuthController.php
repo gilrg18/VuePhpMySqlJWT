@@ -26,10 +26,11 @@ class AuthController extends Controller
             return redirect(route('user.index'));
             //return $this->responseWithToken($token, auth()->user());
         }else{
-            return response()->json([
-                'status'=>'failed',
-                'message'=>'Invalid credentials'
-            ], 401);
+            // return response()->json([
+            //     'status'=>'failed',
+            //     'message'=>'Invalid credentials'
+            // ], 401);
+            return redirect(route('user.login'))->with('login-failed', 'Invalid credentials');
         }
     }
 

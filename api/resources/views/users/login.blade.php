@@ -15,6 +15,11 @@
             @endforeach
         </ul>
         @endif
+        @if(session()->has('login-failed'))
+        <ul>
+            <li>{{session('login-failed')}}</li>
+        </ul>
+        @endif
     </div>
     <form method="post" action="{{route('login')}}">
         @csrf

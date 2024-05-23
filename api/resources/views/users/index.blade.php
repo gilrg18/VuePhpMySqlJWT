@@ -9,10 +9,14 @@
     <h1>User</h1>
     <div>
         @if(session()->has('success'))
-            <div>{{session('success')}}</div>
+        <ul>
+            <li>{{session('success')}}</li>
+        </ul>    
         @endif
         @if(session()->has('unauthorized'))
-            <div>{{session('unauthorized')}}</div>
+        <ul>
+            <li>{{session('unauthorized')}}</li>
+        </ul>
         @endif
     </div>
     <div>
