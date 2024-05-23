@@ -14,7 +14,8 @@ class AuthController extends Controller
     public function login(LoginRequest $request){
         $token = auth()->attempt($request->validated());
         if($token){
-            return $this->responseWithToken($token, auth()->user());
+            //return $this->responseWithToken($token, auth()->user());
+            return redirect(route('user.index'));
         }else{
             return response()->json([
                 'status'=>'failed',
