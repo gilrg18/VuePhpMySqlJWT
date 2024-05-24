@@ -15,7 +15,7 @@ class UserController extends Controller
         session(['isAuth'=>false]);
         return view('users.login');
     }
-    public function index(){
+    public function getUsers(){
         $users = User::all();
         return $users;
         //return view('users.index', ['users'=>$users]);
@@ -49,7 +49,7 @@ class UserController extends Controller
         ]);
 
         $user-> update($data);
-        return redirect(route('user.index'))->with('success', 'User '.$user->id .' Updated Successfully');
+        //return redirect(route('user.index'))->with('success', 'User '.$user->id .' Updated Successfully');
     }
 
     public function deleteUser(User $user){
