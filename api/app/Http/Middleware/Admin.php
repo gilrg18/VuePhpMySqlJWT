@@ -19,8 +19,8 @@ class Admin
         //auth()->user() and check() are not persisting from login controller
         //dd(auth()->user(), auth()->check(), session('isAdmin'));
         if(!session('isAdmin')){
-            //abort(403);
-           return redirect(route('user.index'))->with('unauthorized', 'Unauthorized');
+            abort(403);
+           //return redirect(route('user.index'))->with('unauthorized', 'Unauthorized');
         }
         return $next($request);
     }
