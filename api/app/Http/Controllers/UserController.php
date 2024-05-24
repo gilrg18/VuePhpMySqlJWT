@@ -17,7 +17,8 @@ class UserController extends Controller
     }
     public function index(){
         $users = User::all();
-        return view('users.index', ['users'=>$users]);
+        return $users;
+        //return view('users.index', ['users'=>$users]);
     }
 
     public function createUser(){
