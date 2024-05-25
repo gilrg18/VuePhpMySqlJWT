@@ -49,6 +49,7 @@ class UserController extends Controller
         ]);
 
         $user-> update($data);
+        return $user;
         //return redirect(route('user.index'))->with('success', 'User '.$user->id .' Updated Successfully');
     }
 
