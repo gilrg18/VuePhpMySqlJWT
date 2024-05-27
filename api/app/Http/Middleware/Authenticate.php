@@ -16,8 +16,8 @@ class Authenticate
     public function handle(Request $request, Closure $next): Response
     {
         if(!session('isAuth')){
-            //abort(403);
-           return redirect(route('user.login'));
+           abort(403);
+           //return redirect(route('user.login'));
         }
         return $next($request);
     }
